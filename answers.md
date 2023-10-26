@@ -62,6 +62,7 @@ What branches would change, and how?
 git checkout test
 git merge top_N
 ```
+Move head of test to top_N, "adding" changes accordingly.
 
 6. What do you think would happen if you ran the following commands?
 What branches would change, and how?
@@ -69,6 +70,7 @@ What branches would change, and how?
 git checkout top_ten
 git merge test
 ```
+Add changes from test to top_ten, i.e. rename quiz.md to answers.md. Test remains unchanged.
 
 7. What do you think would happen if you ran the following commands?
 What branches would change, and how?
@@ -77,3 +79,8 @@ git checkout test
 git rebase top_ten
 git rebase top_N
 ```
+
+Changes are retroactively appplied such that the final commit history appears as test (answers.md change) -> top_N (because rebased second) -> top_ten -> test, with the changes of all preceeding elements applied to following elements.
+
+Conflict between top_N and top_ten in function signature and doc comments.
+
